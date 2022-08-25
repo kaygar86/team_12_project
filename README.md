@@ -9,8 +9,7 @@
 Reason 
 - We want to understand the factors that lead to the decisions of stray animals found in Sonoma County
 
-
-# Communication Protocol Team 12
+# Communication Protocol
 Our team will take a 3-pronged approach to communication via:
 - Regular check-ins on Zoom
 ![zoom](https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_zoom.png)
@@ -23,3 +22,30 @@ Our team will take a 3-pronged approach to communication via:
 Changes to repository require pull request and team member review before being pushed to main. Comments will be used to communicate adjustments or clarifications on proposed changes.
 
 ## Github Branches
+Each team member has at least one branch with multiple commits.
+
+# Technology Used
+- Workspace
+  - Github
+- Machine Learning
+  - Model: tbd
+- Visualization Tool
+  - Tableau
+- Database
+  - pgAdmin
+- Tools
+  - Jupyter Notebook
+    - Python; Pandas
+  - Google Slides
+  - Communication 
+    - Slack
+    - Zoom
+    - Github
+    
+## Google Slides Presentation
+https://docs.google.com/presentation/d/17mCjE0kkGxOOtFdaLy7aAWzhwDQJiakgXJcc1TdWPjY/edit#slide=id.g1463f604542_3_1
+
+## Tableau Data Visualiztion
+Initial analysis of Sonoma Shelter Data: https://public.tableau.com/app/profile/katie.garcia/viz/ShelterVisualizations/Story12
+
+
