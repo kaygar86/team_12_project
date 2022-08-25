@@ -24,6 +24,13 @@ Changes to repository require pull request and team member review before being p
 ## Github Branches
 Each team member has at least one branch with multiple commits.
 
+## Data Sources
+- Sonoma County Shelter Intake - link
+- US Census Sonoma County Median Income - link
+- Sonoma County Food Facilities - link 
+- Sonoma County Weather - link 
+- Sonoma Fire Data - link
+
 # Technology Used
 - Workspace
   - Github
@@ -46,6 +53,6 @@ Each team member has at least one branch with multiple commits.
 https://docs.google.com/presentation/d/17mCjE0kkGxOOtFdaLy7aAWzhwDQJiakgXJcc1TdWPjY/edit#slide=id.g1463f604542_3_1
 
 ## Tableau Data Visualiztion
-Initial analysis of Sonoma Shelter Data: https://public.tableau.com/app/profile/katie.garcia/viz/ShelterVisualizations/Story12
+Analysis of Sonoma Shelter Data: https://public.tableau.com/app/profile/katie.garcia/viz/ShelterVisualizations/Story12
 
 
