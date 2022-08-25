@@ -9,7 +9,7 @@
 Reason 
 - We want to understand the factors that lead to the decisions of stray animals found in Sonoma County
 
-# Communication Protocol
+## Communication Protocol
 Our team will take a 3-pronged approach to communication via:
 - Regular check-ins on Zoom
 ![zoom](https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_zoom.png)
@@ -24,6 +24,9 @@ Changes to repository require pull request and team member review before being p
 ## Github Branches
 Each team member has at least one branch with multiple commits.
 
+![Branches](https://user-images.githubusercontent.com/66224990/186725561-e3481f2a-fa80-4254-9b20-f83e139b2aab.png)
+
+
 ## Data Sources
 - Sonoma County Shelter Intake - link
 - US Census Sonoma County Median Income - link
@@ -31,7 +34,12 @@ Each team member has at least one branch with multiple commits.
 - Sonoma County Weather - link 
 - Sonoma Fire Data - link
 
-# Technology Used
+## Database Schema
+We propose linking datasets by Zip Code
+![QuickDBD-databases](https://user-images.githubusercontent.com/66224990/186725114-16ce4be2-60a1-4b3e-9fa9-a74fdc446f5f.png)
+
+
+## Technology Used
 - Workspace
   - Github
 - Machine Learning
