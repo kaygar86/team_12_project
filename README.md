@@ -28,11 +28,11 @@ Each team member has at least one branch with multiple commits.
 
 
 ## Data Sources
-- Sonoma County Shelter Intake - link
-- US Census Sonoma County Median Income - link
-- Sonoma County Food Facilities - link 
+- Sonoma County Shelter Intake - https://data.sonomacounty.ca.gov/Government/Animal-Shelter-Intake-and-Outcome/924a-vesw/data
+- US Census Sonoma County Median Income - https://censusreporter.org/profiles/05000US06097-sonoma-county-ca/
+- Sonoma County Food Facilities - https://data.sonomacounty.ca.gov/Health/Food-Facility-Inspections/8r44-w5qd 
 - Sonoma County Weather - link 
-- Sonoma Fire Data - link
+- Sonoma Fire Data - https://gis.data.cnra.ca.gov/datasets/CALFIRE-Forestry::california-fire-perimeters-all/explore?layer=0&location=37.442493%2C-118.992700%2C6.97&showTable=true
 
 ## Database Schema
 We propose linking datasets by Zip Code
