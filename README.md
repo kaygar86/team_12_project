@@ -61,6 +61,6 @@ We propose linking datasets by Zip Code
 https://docs.google.com/presentation/d/17mCjE0kkGxOOtFdaLy7aAWzhwDQJiakgXJcc1TdWPjY/edit#slide=id.g1463f604542_3_1
 
 ## Tableau Data Visualiztion
-Analysis of Sonoma Shelter Data: https://public.tableau.com/app/profile/katie.garcia/viz/ShelterVisualizations/Story12
+Analysis of Sonoma Shelter Data: https://public.tableau.com/app/profile/katie.garcia/viz/ShelterVisualizations/Story12?publish=yes
 
 
