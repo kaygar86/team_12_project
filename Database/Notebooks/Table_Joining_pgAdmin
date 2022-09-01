@@ -8,19 +8,34 @@ CREATE TABLE Sonoma_Counts_Census (
 	PRIMARY KEY (ZipCode)
 );
 
-DROP TABLE Animal_Shelter_Intake_and_Outake
-CREATE TABLE sonoma_shelter_clean (
+CREATE TABLE Animal_Shelter_Intake_and_Outake (
 	ZipCode INT NOT NULL,
-	Animal_ID INT NOT NULL,
+	Animal_Name VARCHAR NOT NULL,
 	Animal_Type VARCHAR NOT NULL,
 	Breed VARCHAR NOT NULL,
+	Color VARCHAR NOT NULL,
+	Sex VARCHAR NOT NULL,
 	Animal_Size VARCHAR NOT NULL,
+	Date_of_Birth INT NOT NULL,
+	Impound_Number VARCHAR NOT NULL,
+	Kennel_Number VARCHAR NOT NULL,
+	Animal_ID VARCHAR NOT NULL,
+	Intake_Date INT NOT NULL,
+	Outcome_Date INT NOT NULL,
+	Days_in_Shelter INT NOT NULL,
+	Intake_Type INT NOT NULL,
+	Intake_Subtake VARCHAR NOT NULL,
 	Outcome_Type VARCHAR NOT NULL,
-    Outcome_Jurisdiction VARCHAR NOT NULL,
-    Intake_Jurisdiction VARCHAR NOT NULL
+	Outcome_Subtype VARCHAR NOT NULL,
+	Intake_Condition VARCHAR NOT NULL,
+	Outcome_Condition VARCHAR NOT NULL,
+	Intake_Jurisdiction VARCHAR NOT NULL,
+	Outcome_Jurisdiction VARCHAR NOT NULL,
+	Animal_Count INT NOT NULL
 ,FOREIGN KEY (ZipCode) REFERENCES Sonoma_Counts_Census (ZipCode),
     PRIMARY KEY (ZipCode)
 );
+
 DROP TABLE Food_Facilties
 CREATE Table Food_Facilities (
 	ZipCode INT NOT NULL,
@@ -40,6 +55,24 @@ CREATE Table sonoma_county_weather_clean (
     PRIMARY KEY (month_date)
 );
 
+CREATE Table zip_code_county_city_database (
+	ZipCode INT NOT NULL,
+	Primary_city VARCHAR NOT NULL,
+	Acceptable_City VARCHAR NOT NULL,
+	Unacceptable_City VARCHAR NOT NULL,
+	Location_State VARCHAR NOT NULL,
+	County VARCHAR NOT NULL,
+	Timezone VARCHAR NOT NULL,
+	Area_code INT NOT NULL,
+	World_Region VARCHAR NOT NULL,
+	Country VARCHAR NOT NULL,
+	Latitude INT NOT NULL,
+	Longitude INT NOT NULL,
+	IRS_Estimated_Population INT NOT NULL
+	,FOREIGN KEY (ZipCode) REFERENCES Animal_Shelter_Intake_and_Outake (ZipCode),
+    PRIMARY KEY (Zipcode)
+);
+
 --Joining 3 tables Sonoma_Counts_Census, Animal_Shelter_Intake_and _Outake, and Food Facilties
 Select 
 	Sonoma_Counts_Census.ZipCode,
@@ -47,22 +80,54 @@ Select
 	Sonoma_Counts_Census.Number_of_Households,
 	Sonoma_Counts_Census.Median_Income,
 	Sonoma_Counts_Census.Average_Income,
-	sonoma_shelter_clean.ZipCode,
-	sonoma_shelter_clean.Animal_ID,
-	sonoma_shelter_clean.Animal_Type,
-	sonoma_shelter_clean.Breed,
-	sonoma_shelter_clean.Animal_Size,
-	sonoma_shelter_clean.Outcome_Type,
-	sonoma_shelter_clean.Outcome_Jurisdiction,
-	sonoma_shelter_clean.Intake_Jurisdiction,
+	Animal_Shelter_Intake_and_Outake.ZipCode,
+	Animal_Shelter_Intake_and_Outake.Animal_Name,
+	Animal_Shelter_Intake_and_Outake.Animal_Type,
+	Animal_Shelter_Intake_and_Outake.Breed,
+	Animal_Shelter_Intake_and_Outake.Color,
+	Animal_Shelter_Intake_and_Outake.Sex,
+	Animal_Shelter_Intake_and_Outake.Animal_Size,
+	Animal_Shelter_Intake_and_Outake.Date_of_Birth,
+	Animal_Shelter_Intake_and_Outake.Impound_Number,
+	Animal_Shelter_Intake_and_Outake.Kennel_Number,
+	Animal_Shelter_Intake_and_Outake.Animal_ID,
+	Animal_Shelter_Intake_and_Outake.Intake_Date,
+	Animal_Shelter_Intake_and_Outake.Intake_Subtake,
+	Animal_Shelter_Intake_and_Outake.Outcome_Type,
+	Animal_Shelter_Intake_and_Outake.Outcome_Subtype,
+	Animal_Shelter_Intake_and_Outake.Intake_Condition,
+	Animal_Shelter_Intake_and_Outake.Outcome_Condition,
+	Animal_Shelter_Intake_and_Outake.Intake_Jurisdiction,
+	Animal_Shelter_Intake_and_Outake.Outcome_Jurisdiction,
+	Animal_Shelter_Intake_and_Outake.Animal_Count,
 	Food_Facilities.ZipCode,
 	Food_Facilities.Facility_name,
 	Food_Facilities.Address,
 	Food_Facilities.City,
-	Food_Facilities.State_Location
+	Food_Facilities.State_Location,
+	sonoma_county_weather_clean.month_date,
+	sonoma_county_weather_clean.high_temp, 
+	sonoma_county_weather_clean.low_temp, 
+	sonoma_county_weather_clean.rain,
+	zip_code_county_city_database.ZipCode,
+	zip_code_county_city_database.Primary_city,
+	zip_code_county_city_database.Acceptable_City,
+	zip_code_county_city_database.Unacceptable_City,
+	zip_code_county_city_database.Location_State,
+	zip_code_county_city_database.County,
+	zip_code_county_city_database.Timezone,
+	zip_code_county_city_database.Area_code,
+	zip_code_county_city_database.World_Region,
+	zip_code_county_city_database.Country,
+	zip_code_county_city_database.Latitude,
+	zip_code_county_city_database.Longitude,
+	zip_code_county_city_database.IRS_Estimated_Population
 FROM Sonoma_Counts_Census
-JOIN sonoma_shelter_clean
-	ON Sonoma_Counts_Census.ZipCode=sonoma_shelter_clean.Zipcode
+JOIN Animal_Shelter_Intake_and_Outake
+	ON Sonoma_Counts_Census.ZipCode=Animal_Shelter_Intake_and_Outake.Zipcode
 JOIN Food_Facilities
-	ON Food_Facilities.ZipCode=sonoma_shelter_clean.Zipcode
-	
+	ON Food_Facilities.ZipCode=Animal_Shelter_Intake_and_Outake.Zipcode
+JOIN zip_code_county_city_database
+	ON zip_code_county_city_database.ZipCode=Animal_Shelter_Intake_and_Outake.Zipcode
+JOIN sonoma_county_weather_clean
+	ON sonoma_county_weather_clean.month_date=Animal_Shelter_Intake_and_Outake.Intake_Date
