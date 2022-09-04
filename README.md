@@ -14,9 +14,10 @@ Our team will take a 3-pronged approach to communication via:
 - Regular check-ins on Zoom
 <img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_zoom.png" width="300" height="200">  
 - Slack chat group
-![slack](https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_slack.png)
+<img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_slack.png" width="300" height="200"> 
 - Github discussion board
-![github](https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_github.png)
+<img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_github.png" width="300" height="200"> 
+
 
 ## Repo Changes
 Changes to repository require pull request and team member review before being pushed to main. Comments will be used to communicate adjustments or clarifications on proposed changes.
