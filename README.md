@@ -27,7 +27,6 @@ Each team member has at least one branch with multiple commits.
 
 ![Branches](https://user-images.githubusercontent.com/66224990/186725561-e3481f2a-fa80-4254-9b20-f83e139b2aab.png)
 
-
 ## Data Sources
 - Sonoma County Shelter Intake - https://data.sonomacounty.ca.gov/Government/Animal-Shelter-Intake-and-Outcome/924a-vesw/data
 - US Census Sonoma County Median Income - https://censusreporter.org/profiles/05000US06097-sonoma-county-ca/
@@ -38,7 +37,6 @@ Each team member has at least one branch with multiple commits.
 ## Database Schema
 We propose linking datasets by Zip Code
 ![QuickDBD-databases](https://user-images.githubusercontent.com/66224990/186725114-16ce4be2-60a1-4b3e-9fa9-a74fdc446f5f.png)
-
 
 ## Technology Used
 - Workspace
@@ -57,7 +55,12 @@ We propose linking datasets by Zip Code
     - Slack
     - Zoom
     - Github
-    
+
+## Machine Learning
+The aim of the Machine Learning algorithm is to predict outcomes of stray animals found in Sonoma County. The model is to be used to assess the probability of stray dogs and cats to be adopted or returned to owner.  
+The model selected is GradientBoostingRegressor which and it is able to predicts animals outcome with a 11% MSE.  
+See Google Slides Presentation link below for more details.  
+
 ## Google Slides Presentation
 https://docs.google.com/presentation/d/17mCjE0kkGxOOtFdaLy7aAWzhwDQJiakgXJcc1TdWPjY/edit#slide=id.g1463f604542_3_1
 
