@@ -13,7 +13,6 @@ Reason
 Our team will take a 3-pronged approach to communication via:
 - Regular check-ins on Zoom
 <img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_zoom.png" width="300" height="200">  
-![zoom](https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_zoom.png)
 - Slack chat group
 ![slack](https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_slack.png)
 - Github discussion board
