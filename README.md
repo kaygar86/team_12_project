@@ -12,11 +12,11 @@ Reason
 ## Communication Protocol
 Our team will take a 3-pronged approach to communication via:
 - Regular check-ins on Zoom
-<img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_zoom.png" width="500" height="350">  
+<img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_zoom.png" width="600" height="350">  
 - Slack chat group
-<img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_slack.png" width="500" height="350"> 
+<img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_slack.png" width="600" height="350"> 
 - Github discussion board
-<img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_github.png" width="500" height="350"> 
+<img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_github.png" width="600" height="350"> 
 
 
 ## Repo Changes
