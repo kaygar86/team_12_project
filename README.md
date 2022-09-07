@@ -36,7 +36,8 @@ Each team member has at least one branch with multiple commits.
 
 ## Database Schema
 We propose linking datasets by Zip Code
-![QuickDBD-databases](https://user-images.githubusercontent.com/66224990/186725114-16ce4be2-60a1-4b3e-9fa9-a74fdc446f5f.png)
+![QuickDBD_All_Data](https://user-images.githubusercontent.com/66224990/188485447-415d4683-e4a8-4a22-be68-3f1907f1dd54.png)
+
 
 ## Technology Used
 - Workspace
