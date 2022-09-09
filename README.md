@@ -9,16 +9,6 @@
 Reason 
 - We want to understand the factors that lead to the decisions of stray animals found in Sonoma County
 
-## Communication Protocol
-Our team will take a 3-pronged approach to communication via:
-- Regular check-ins on Zoom
-<img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_zoom.png" width="600" height="350">  
-- Slack chat group
-<img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_slack.png" width="600" height="350"> 
-- Github discussion board
-<img src="https://github.com/kaygar86/team_12_project/blob/main/Resources/Pictures/Comm_protocol_github.png" width="600" height="350"> 
-
-
 ## Repo Changes
 Changes to repository require pull request and team member review before being pushed to main. Comments will be used to communicate adjustments or clarifications on proposed changes.
 
@@ -37,7 +27,6 @@ Each team member has at least one branch with multiple commits.
 ## Database Schema
 We propose linking datasets by Zip Code
 ![QuickDBD_All_Data](https://user-images.githubusercontent.com/66224990/188485447-415d4683-e4a8-4a22-be68-3f1907f1dd54.png)
-
 
 ## Technology Used
 - Workspace
@@ -69,3 +58,56 @@ https://docs.google.com/presentation/d/17mCjE0kkGxOOtFdaLy7aAWzhwDQJiakgXJcc1TdW
 Analysis of Sonoma Shelter Data: https://public.tableau.com/app/profile/katie.garcia/viz/ShelterVisualizations/Story12?publish=yes
 
 
+# Segment 3 Deliverables
+## Presentation (15 points)
+Content
+The presentation tells a story about the project and includes the following:
+
+- Selected topic
+- Reason topic was selected
+- Description of the source of data
+- Questions the team hopes to answer with the data
+- Description of the data exploration phase of the project
+- Description of the analysis phase of the project
+- Technologies, languages, tools, and algorithms used throughout the project
+- Slides
+- Presentations are drafted in Google Slides.
+
+## GitHub Repository (10 points)
+Main Branch
+All code in the main branch is production-ready.
+main branch should include:
+- All code necessary to perform exploratory analysis
+- Most code necessary to complete the machine learning portion of the project
+README.md
+README.md should include:
+- Description of the communication protocols has been removed
+- Cohesive, structured outline of the project (this may include images, but they should be easy to follow and digest)
+- Link to Google Slides draft presentation
+IMPORTANT
+The descriptions and explanations required in the project deliverables should also be in your README.md as part of your outline, unless otherwise noted.
+
+## Individual Branches
+Requirements for the individual branches follow:
+- At least one branch for each team member
+- Each team member has at least four commits for the duration of the third segment (12 total commits per person)
+
+## Machine Learning Model (45 points)
+Students will be expected to submit the working code for their machine learning model, as well as the following:
+- Description of data preprocessing
+- Description of feature engineering and the feature selection, including the decision-making process
+- Description of how data was split into training and testing sets
+- Explanation of model choice, including limitations and benefits
+- Explanation of changes in model choice (if changes occurred between the Segment 2 and Segment 3 deliverables)
+- Description of how they have trained the model thus far, and any additional training that will take place
+- Description of current accuracy score
+- Additionally, the model obviously addresses the question or problem the team is solving.
+
+## Database Integration (0 points)
+There are no deliverables for the database integration section of the project for this segment.
+
+## Dashboard (30 points)
+The dashboard presents a data story that is logical and easy to follow for someone unfamiliar with the topic. It includes the following:
+- Images from the initial analysis
+- Data (images or report) from the machine learning task
+- At least one interactive element
