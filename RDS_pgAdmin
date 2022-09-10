@@ -1,0 +1,88 @@
+CREATE TABLE Sonoma_County_CensusData_Zipcode (
+	ZipCode INT NOT NULL, 
+	Population INT NOT NULL,
+	Number_of_Households INT NOT NULL,
+	Median_Income INT NOT NULL,
+	Average_Income INT NOT NULL,
+	Land_Area_SqMiles INT,
+	PRIMARY KEY (ZipCode)
+);
+SELECT * FROM Sonoma_County_CensusData_Zipcode;
+
+DROP TABLE Animal_Shelter_Intake_and_Outake CASCADE
+--Creating new shelter table data 
+CREATE TABLE Animal_Shelter_Intake_and_Outake (
+	Animal_Name VARCHAR NULL,
+	Animal_Type VARCHAR NOT NULL,
+	Breed VARCHAR NOT NULL,
+	Color VARCHAR NOT NULL,
+	Sex VARCHAR NOT NULL,
+	Animal_Size VARCHAR NULL,
+	Date_Of_Birth DATE NULL,
+	Impound_Number VARCHAR NOT NULL,
+	Kennel_Number VARCHAR NULL,
+	Animal_ID VARCHAR NOT NULL,
+	date_reported DATE NOT NULL,
+	Outcome_Date DATE NULL,
+	Days_in_Shelter INT NOT NULL,
+	Intake_Type VARCHAR NOT NULL,
+	Intake_Subtype VARCHAR NOT NULL,
+	Outcome_Type VARCHAR NULL,
+	Outcome_Subtype VARCHAR NULL,
+	Intake_Condition VARCHAR NOT NULL,
+	Outcome_Condition VARCHAR NULL,
+	Intake_Jurisdiction VARCHAR NOT NULL,
+	Outcome_Jurisdiction VARCHAR NULL,
+	ZipCode INT Null,
+	Location_num VARCHAR NULL,
+	Animal_Count INT NOT NULL,
+PRIMARY KEY (Impound_Number)
+);
+SELECT * FROM Animal_Shelter_Intake_and_Outake
+DROP TABLE Food_Facilities
+--Creating new food facilities table
+CREATE Table Food_Facilities (
+	ZipCode VARCHAR (10) NOT NULL,
+	facilities_count INT NOT NULL,
+	PRIMARY KEY (ZipCode)
+);
+SELECT * FROM Food_Facilities;
+DROP TABLE sonoma_county_weather_clean CASCADE
+CREATE Table sonoma_county_weather_clean (
+	date_reported DATE NOT NULL,
+	high_temp INT NOT NULL, 
+	low_temp INT NOT NULL, 
+	rain DECIMAL NOT NULL,
+PRIMARY KEY (date_reported)
+);
+SELECT * FROM sonoma_county_weather_clean;
+
+DROP TABLE zip_code_county_city_database
+--Creating new table
+CREATE Table zip_code_county_city_database (
+	ZipCode INT NULL,
+	City VARCHAR NOT NULL,
+	County VARCHAR NULL,
+	US_State VARCHAR NOT NULL,
+	Latitude DECIMAL NOT NULL,
+	Longitude DECIMAL NOT NULL,
+	PRIMARY KEY (Zipcode)
+);
+SELECT * FROM zip_code_county_city_database;
+DROP TABLE Sonoma_Fire_Perimeters
+CREATE TABLE Sonoma_Fire_Perimeters(
+	US_State VARCHAR NOT NULL,
+	Agency VARCHAR NOT NULL,
+	Unit_ID VARCHAR NOT NULL,
+	Unit_Region VARCHAR NOT NULL,
+	Fire_Name VARCHAR NOT NULL,
+	Inc_Num INT NULL,
+	Date_Reported DATE NOT NULL,
+	Containment_Date DATE NOT NULL,
+	Fire_Comments VARCHAR NULL,
+	GIS_Acres DECIMAL NOT NULL,
+	PRIMARY KEY (GIS_Acres)
+);
+
+SELECT * FROM Sonoma_Fire_Perimeters;
+
