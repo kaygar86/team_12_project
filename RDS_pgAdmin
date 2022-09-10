@@ -86,3 +86,57 @@ CREATE TABLE Sonoma_Fire_Perimeters(
 
 SELECT * FROM Sonoma_Fire_Perimeters;
 
+Select 
+	Sonoma_County_CensusData_Zipcode.ZipCode,
+	Sonoma_County_CensusData_Zipcode.Population,
+	Sonoma_County_CensusData_Zipcode.Number_of_Households,
+	Sonoma_County_CensusData_Zipcode.Median_Income,
+	Sonoma_County_CensusData_Zipcode.Average_Income,
+	Sonoma_County_CensusData_Zipcode.Land_Area_SqMiles,
+	Animal_Shelter_Intake_and_Outake.ZipCode,
+	Animal_Shelter_Intake_and_Outake.Animal_Name,
+	Animal_Shelter_Intake_and_Outake.Animal_Type,
+	Animal_Shelter_Intake_and_Outake.Breed,
+	Animal_Shelter_Intake_and_Outake.Color,
+	Animal_Shelter_Intake_and_Outake.Sex,
+	Animal_Shelter_Intake_and_Outake.Animal_Size,
+	Animal_Shelter_Intake_and_Outake.Date_Of_Birth,
+	Animal_Shelter_Intake_and_Outake.Impound_Number,
+	Animal_Shelter_Intake_and_Outake.Kennel_Number,
+	Animal_Shelter_Intake_and_Outake.Animal_ID,
+	Animal_Shelter_Intake_and_Outake.date_reported,
+	Animal_Shelter_Intake_and_Outake.Intake_Subtype,
+	Animal_Shelter_Intake_and_Outake.Outcome_Type,
+	Animal_Shelter_Intake_and_Outake.Outcome_Subtype,
+	Animal_Shelter_Intake_and_Outake.Intake_Condition,
+	Animal_Shelter_Intake_and_Outake.Outcome_Condition,
+	Animal_Shelter_Intake_and_Outake.Intake_Jurisdiction,
+	Animal_Shelter_Intake_and_Outake.Outcome_Jurisdiction,
+	Animal_Shelter_Intake_and_Outake.Animal_Count,
+	Food_Facilities.ZipCode,
+	Food_Facilities.facilities_count,
+	sonoma_county_weather_clean.date_reported,
+	sonoma_county_weather_clean.high_temp, 
+	sonoma_county_weather_clean.low_temp, 
+	sonoma_county_weather_clean.rain,
+	Sonoma_Fire_Perimeters.US_State,
+	Sonoma_Fire_Perimeters.Agency,
+	Sonoma_Fire_Perimeters.Unit_ID,
+	Sonoma_Fire_Perimeters.Unit_Region,
+	Sonoma_Fire_Perimeters.Fire_Name,
+	Sonoma_Fire_Perimeters.Inc_Num,
+	Sonoma_Fire_Perimeters.Date_Reported,
+	Sonoma_Fire_Perimeters.Containment_Date,
+	Sonoma_Fire_Perimeters.Fire_Comments,
+	Sonoma_Fire_Perimeters.GIS_Acres
+	
+FROM Animal_Shelter_Intake_and_Outake
+FULL OUTER JOIN Sonoma_County_CensusData_Zipcode 
+	ON Animal_Shelter_Intake_and_Outake.ZipCode=Sonoma_County_CensusData_Zipcode.Zipcode
+FULL OUTER JOIN Food_Facilities
+	ON Food_Facilities.ZipCode=Animal_Shelter_Intake_and_Outake.Zipcode
+FULL OUTER JOIN sonoma_county_weather_clean
+	ON sonoma_county_weather_clean.date_reported=Animal_Shelter_Intake_and_Outake.date_reported
+FULL OUTER JOIN Sonoma_Fire_Perimeters
+	ON Sonoma_Fire_Perimeters.date_reported=sonoma_county_weather_clean.date_reported
+
