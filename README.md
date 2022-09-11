@@ -32,7 +32,7 @@ We propose linking datasets by Zip Code
 - Workspace
   - Github
 - Machine Learning
-  - Model: tbd
+  - Model: GradientBoostingRegressor
 - Visualization Tool
   - Tableau
 - Database
