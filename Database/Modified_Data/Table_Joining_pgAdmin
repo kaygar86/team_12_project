@@ -1,0 +1,152 @@
+--Creating tables for Zipcodes
+--edit in Land_Area(Sq.Miles)
+DROP TABLE Sonoma_Counts_Census CASCADE
+CREATE TABLE Sonoma_County_CensusData_Zipcode (
+	ZipCode INT NOT NULL, 
+	Population INT NOT NULL,
+	Number_of_Households INT NOT NULL,
+	Median_Income INT NOT NULL,
+	Average_Income INT NOT NULL,
+	Land_Area_SqMiles INT NOT NULL,
+	PRIMARY KEY (ZipCode)
+);
+--Making edits to original table 
+DROP Table Animal_Shelter_Intake_and_Outake Cascade
+--Creating new shelter table data 
+CREATE TABLE Animal_Shelter_Intake_and_Outake (
+	ZipCode INT NOT NULL,
+	Animal_Name VARCHAR NOT NULL,
+	Animal_Type VARCHAR NOT NULL,
+	Breed VARCHAR NOT NULL,
+	Color VARCHAR NOT NULL,
+	Sex VARCHAR NOT NULL,
+	Animal_Size VARCHAR NOT NULL,
+	Date_Of_Birth INT NOT NULL,
+	Impound_Number VARCHAR NOT NULL,
+	Kennel_Number VARCHAR NOT NULL,
+	Animal_ID VARCHAR NOT NULL,
+	date_reported INT NOT NULL,
+	Outcome_Date INT NOT NULL,
+	Days_in_Shelter INT NOT NULL,
+	Intake_Type INT NOT NULL,
+	Intake_Subtype VARCHAR NOT NULL,
+	Outcome_Type VARCHAR NOT NULL,
+	Outcome_Subtype VARCHAR NOT NULL,
+	Intake_Condition VARCHAR NOT NULL,
+	Outcome_Condition VARCHAR NOT NULL,
+	Intake_Jurisdiction VARCHAR NOT NULL,
+	Outcome_Jurisdiction VARCHAR NOT NULL,
+	Animal_Count INT NOT NULL
+,FOREIGN KEY (ZipCode) REFERENCES Sonoma_County_CensusData_Zipcode (ZipCode),
+    PRIMARY KEY (ZipCode)
+);
+--Edits for Facilities dataset
+DROP TABLE food_facilities Cascade
+--Creating new food facilities table
+CREATE Table Food_Facilities (
+	ZipCode INT NOT NULL,
+	facilities_count INT NOT NULL
+,FOREIGN KEY (ZipCode) REFERENCES Animal_Shelter_Intake_and_Outake (ZipCode),
+    PRIMARY KEY (ZipCode)
+);
+--Droping table to make edits
+DROP TABLE sonoma_county_weather_clean CASCADE
+
+CREATE Table sonoma_county_weather_clean (
+	date_reported INT NOT NULL,
+	high_temp INT NOT NULL, 
+	low_temp INT NOT NULL, 
+	rain INT NOT NULL,
+	PRIMARY KEY (date_reported)
+);
+
+--Dropping table for edits 
+DROP TABLE zip_code_county_city_database CASCADE
+--Creating new table
+CREATE Table zip_code_county_city_database (
+	zip INT NOT NULL,
+	primary_city VARCHAR NOT NULL,
+	acceptable_City VARCHAR NOT NULL,
+	unacceptable_City VARCHAR NOT NULL,
+	county VARCHAR NOT NULL,
+	timezone VARCHAR NOT NULL,
+	area_codes INT NOT NULL,
+	world_region VARCHAR NOT NULL,
+	country VARCHAR NOT NULL,
+	latitude INT NOT NULL,
+	longitude INT NOT NULL,
+	irs_estimated_population INT NOT NULL
+	,FOREIGN KEY (ZipCode) REFERENCES Animal_Shelter_Intake_and_Outake (ZipCode),
+    PRIMARY KEY (Zipcode)
+);
+DROP TABLE Sonoma_Fire_Perimeters CASCADE
+CREATE TABLE Sonoma_Fire_Perimeters(
+	US_State VARCHAR NOT NULL,
+	Agency VARCHAR NOT NULL,
+	Unit_ID VARCHAR NOT NULL,
+	Unit_Region VARCHAR NOT NULL,
+	Fire_Name VARCHAR NOT NULL,
+	Inc_Num INT NOT NULL,
+	Date_Reported INT NOT NULL,
+	Containment_Date INT NOT NULL,
+	Fire_Comments VARCHAR NOT NULL,
+	GIS_Acres INT NOT NULL
+,FOREIGN KEY (date_reported) REFERENCES sonoma_county_weather_clean (date_reported),
+    PRIMARY KEY (date_reported)
+);
+	
+
+--Joining 3 tables Sonoma_Counts_Census, Animal_Shelter_Intake_and _Outake, and Food Facilties
+Select 
+	Sonoma_County_CensusData_Zipcode.ZipCode,
+	Sonoma_County_CensusData_Zipcode.Population,
+	Sonoma_County_CensusData_Zipcode.Number_of_Households,
+	Sonoma_County_CensusData_Zipcode.Median_Income,
+	Sonoma_County_CensusData_Zipcode.Average_Income,
+	Sonoma_County_CensusData_Zipcode.Land_Area_SqMiles,
+	Animal_Shelter_Intake_and_Outake.ZipCode,
+	Animal_Shelter_Intake_and_Outake.Animal_Name,
+	Animal_Shelter_Intake_and_Outake.Animal_Type,
+	Animal_Shelter_Intake_and_Outake.Breed,
+	Animal_Shelter_Intake_and_Outake.Color,
+	Animal_Shelter_Intake_and_Outake.Sex,
+	Animal_Shelter_Intake_and_Outake.Animal_Size,
+	Animal_Shelter_Intake_and_Outake.Date_Of_Birth,
+	Animal_Shelter_Intake_and_Outake.Impound_Number,
+	Animal_Shelter_Intake_and_Outake.Kennel_Number,
+	Animal_Shelter_Intake_and_Outake.Animal_ID,
+	Animal_Shelter_Intake_and_Outake.date_reported,
+	Animal_Shelter_Intake_and_Outake.Intake_Subtype,
+	Animal_Shelter_Intake_and_Outake.Outcome_Type,
+	Animal_Shelter_Intake_and_Outake.Outcome_Subtype,
+	Animal_Shelter_Intake_and_Outake.Intake_Condition,
+	Animal_Shelter_Intake_and_Outake.Outcome_Condition,
+	Animal_Shelter_Intake_and_Outake.Intake_Jurisdiction,
+	Animal_Shelter_Intake_and_Outake.Outcome_Jurisdiction,
+	Animal_Shelter_Intake_and_Outake.Animal_Count,
+	Food_Facilities.ZipCode,
+	Food_Facilities.facilities_count,
+	sonoma_county_weather_clean.date_reported,
+	sonoma_county_weather_clean.high_temp, 
+	sonoma_county_weather_clean.low_temp, 
+	sonoma_county_weather_clean.rain,
+	Sonoma_Fire_Perimeters.US_State,
+	Sonoma_Fire_Perimeters.Agency,
+	Sonoma_Fire_Perimeters.Unit_ID,
+	Sonoma_Fire_Perimeters.Unit_Region,
+	Sonoma_Fire_Perimeters.Fire_Name,
+	Sonoma_Fire_Perimeters.Inc_Num,
+	Sonoma_Fire_Perimeters.Date_Reported,
+	Sonoma_Fire_Perimeters.Containment_Date,
+	Sonoma_Fire_Perimeters.Fire_Comments,
+	Sonoma_Fire_Perimeters.GIS_Acres
+	
+FROM Sonoma_County_CensusData_Zipcode
+LEFT JOIN Animal_Shelter_Intake_and_Outake
+	ON Sonoma_County_CensusData_Zipcode.ZipCode=Animal_Shelter_Intake_and_Outake.Zipcode
+LEFT JOIN Food_Facilities
+	ON Food_Facilities.ZipCode=Animal_Shelter_Intake_and_Outake.Zipcode
+LEFT JOIN sonoma_county_weather_clean
+	ON sonoma_county_weather_clean.date_reported=Animal_Shelter_Intake_and_Outake.date_reported
+LEFT JOIN Sonoma_Fire_Perimeters
+	ON Sonoma_Fire_Perimeters.date_reported=sonoma_county_weather_clean.date_reported
